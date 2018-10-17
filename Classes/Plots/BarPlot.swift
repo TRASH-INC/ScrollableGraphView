@@ -9,11 +9,11 @@ open class BarPlot : Plot {
     /// The width of an individual bar on the graph.
     open var barWidth: CGFloat = 25;
     /// The actual colour of the bar.
-    open var barColor: UIColor = UIColor.gray
+    open var barColor: CGColor =  CGColor(colorSpace: CGColorSpaceCreateDeviceRGB(), components: [0.5, 0.5, 0.5, 1.0])!
     /// The width of the outline of the bar
     open var barLineWidth: CGFloat = 1
     /// The colour of the bar outline
-    open var barLineColor: UIColor = UIColor.darkGray
+    open var barLineColor: CGColor =  CGColor(colorSpace: CGColorSpaceCreateDeviceRGB(), components: [0.25, 0.25, 0.25, 1.0])!
     /// Whether the bars should be drawn with rounded corners
     open var shouldRoundBarCorners: Bool = false
     

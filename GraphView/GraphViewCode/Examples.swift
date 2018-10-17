@@ -292,8 +292,8 @@ class Examples : ScrollableGraphViewDataSource {
         
         barPlot.barWidth = 25
         barPlot.barLineWidth = 1
-        barPlot.barLineColor = UIColor.colorFromHex(hexString: "#777777")
-        barPlot.barColor = UIColor.colorFromHex(hexString: "#555555")
+        barPlot.barLineColor = UIColor.colorFromHex(hexString: "#777777").cgColor
+        barPlot.barColor = UIColor.colorFromHex(hexString: "#555555").cgColor
         
         barPlot.adaptAnimationType = ScrollableGraphViewAnimationType.elastic
         barPlot.animationDuration = 1.5

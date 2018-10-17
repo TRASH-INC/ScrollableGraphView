@@ -1,20 +1,22 @@
 
-import UIKit
+import Foundation
+import CoreGraphics
+import QuartzCore
 
 // MARK: Drawing the bars
 internal class BarDrawingLayer: ScrollableGraphViewDrawingLayer {
     
-    private var barPath = UIBezierPath()
+    private var barPath = CGMutablePath()
     private var barWidth: CGFloat = 4
     private var shouldRoundCorners = false
     
-    init(frame: CGRect, barWidth: CGFloat, barColor: UIColor, barLineWidth: CGFloat, barLineColor: UIColor, shouldRoundCorners: Bool) {
+    init(frame: CGRect, barWidth: CGFloat, barColor: CGColor, barLineWidth: CGFloat, barLineColor: CGColor, shouldRoundCorners: Bool) {
         super.init(viewportWidth: frame.size.width, viewportHeight: frame.size.height)
         
         self.barWidth = barWidth
         self.lineWidth = barLineWidth
-        self.strokeColor = barLineColor.cgColor
-        self.fillColor = barColor.cgColor
+        self.strokeColor = barLineColor
+        self.fillColor = barColor
         self.shouldRoundCorners = shouldRoundCorners
         
         self.lineJoin = lineJoin
@@ -25,7 +27,7 @@ internal class BarDrawingLayer: ScrollableGraphViewDrawingLayer {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func createBarPath(centre: CGPoint) -> UIBezierPath {
+    private func createBarPath(centre: CGPoint) -> CGMutablePath {
         
         let barWidthOffset: CGFloat = self.barWidth / 2
         
@@ -33,20 +35,24 @@ internal class BarDrawingLayer: ScrollableGraphViewDrawingLayer {
         let size = CGSize(width: barWidth, height: zeroYPosition - centre.y)
         let rect = CGRect(origin: origin, size: size)
         
-        let barPath: UIBezierPath = {
+        let barPath: CGMutablePath = {
             if shouldRoundCorners {
-                return UIBezierPath(roundedRect: rect, cornerRadius: barWidthOffset)
+                let path = CGMutablePath()
+                path.addRoundedRect(in: rect, cornerWidth: barWidthOffset, cornerHeight: barWidthOffset)
+                return path
             } else {
-                return UIBezierPath(rect: rect)
+                let path = CGMutablePath()
+                path.addRect(rect)
+                return path
             }
         }()
         
         return barPath
     }
     
-    private func createPath () -> UIBezierPath {
+    private func createPath () -> CGMutablePath {
         
-        barPath.removeAllPoints()
+        barPath = CGMutablePath()
         
         // We can only move forward if we can get the data we need from the delegate.
         guard let
@@ -64,7 +70,7 @@ internal class BarDrawingLayer: ScrollableGraphViewDrawingLayer {
             }
             
             let pointPath = createBarPath(centre: location)
-            barPath.append(pointPath)
+            barPath.addPath(pointPath)
         }
         
         return barPath
@@ -72,6 +78,6 @@ internal class BarDrawingLayer: ScrollableGraphViewDrawingLayer {
     
     override func updatePath() {
         
-        self.path = createPath ().cgPath
+        self.path = createPath ()
     }
 }
