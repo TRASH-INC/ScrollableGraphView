@@ -1,5 +1,5 @@
 
-import UIKit
+import Foundation
 
 public protocol ScrollableGraphViewDataSource : class {
     func value(forPlot plot: Plot, atIndex pointIndex: Int) -> Double

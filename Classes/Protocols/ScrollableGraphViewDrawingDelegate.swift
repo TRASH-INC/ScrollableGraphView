@@ -1,5 +1,6 @@
 
-import UIKit
+import Foundation
+import CoreGraphics
 
 // Delegate definition that provides the data required by the drawing layers.
 internal protocol ScrollableGraphViewDrawingDelegate : class {

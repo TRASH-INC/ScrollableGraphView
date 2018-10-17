@@ -1,5 +1,7 @@
 
-import UIKit
+import Foundation
+import CoreGraphics
+import QuartzCore
 
 internal class ScrollableGraphViewDrawingLayer : CAShapeLayer {
     
