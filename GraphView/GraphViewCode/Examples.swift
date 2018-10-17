@@ -110,7 +110,7 @@ class Examples : ScrollableGraphViewDataSource {
         // Setup the first plot.
         let blueLinePlot = LinePlot(identifier: "multiBlue")
         
-        blueLinePlot.lineColor = UIColor.colorFromHex(hexString: "#16aafc")
+        blueLinePlot.lineColor = UIColor.colorFromHex(hexString: "#16aafc").cgColor
         blueLinePlot.adaptAnimationType = ScrollableGraphViewAnimationType.elastic
         
         // dots on the line
@@ -124,7 +124,7 @@ class Examples : ScrollableGraphViewDataSource {
         // Setup the second plot.
         let orangeLinePlot = LinePlot(identifier: "multiOrange")
         
-        orangeLinePlot.lineColor = UIColor.colorFromHex(hexString: "#ff7d78")
+        orangeLinePlot.lineColor = UIColor.colorFromHex(hexString: "#ff7d78").cgColor
         orangeLinePlot.adaptAnimationType = ScrollableGraphViewAnimationType.elastic
         
         // squares on the line
@@ -175,12 +175,12 @@ class Examples : ScrollableGraphViewDataSource {
         let blueLinePlot = LinePlot(identifier: "multiBlue")
         
         blueLinePlot.lineWidth = 1
-        blueLinePlot.lineColor = UIColor.colorFromHex(hexString: "#16aafc")
+        blueLinePlot.lineColor = UIColor.colorFromHex(hexString: "#16aafc").cgColor
         blueLinePlot.lineStyle = ScrollableGraphViewLineStyle.smooth
         
         blueLinePlot.shouldFill = true
         blueLinePlot.fillType = ScrollableGraphViewFillType.solid
-        blueLinePlot.fillColor = UIColor.colorFromHex(hexString: "#16aafc").withAlphaComponent(0.5)
+        blueLinePlot.fillColor = UIColor.colorFromHex(hexString: "#16aafc").withAlphaComponent(0.5).cgColor
         
         blueLinePlot.adaptAnimationType = ScrollableGraphViewAnimationType.elastic
         
@@ -188,12 +188,12 @@ class Examples : ScrollableGraphViewDataSource {
         let orangeLinePlot = LinePlot(identifier: "multiOrange")
         
         orangeLinePlot.lineWidth = 1
-        orangeLinePlot.lineColor = UIColor.colorFromHex(hexString: "#ff7d78")
+        orangeLinePlot.lineColor = UIColor.colorFromHex(hexString: "#ff7d78").cgColor
         orangeLinePlot.lineStyle = ScrollableGraphViewLineStyle.smooth
         
         orangeLinePlot.shouldFill = true
         orangeLinePlot.fillType = ScrollableGraphViewFillType.solid
-        orangeLinePlot.fillColor = UIColor.colorFromHex(hexString: "#ff7d78").withAlphaComponent(0.5)
+        orangeLinePlot.fillColor = UIColor.colorFromHex(hexString: "#ff7d78").withAlphaComponent(0.5).cgColor
         
         orangeLinePlot.adaptAnimationType = ScrollableGraphViewAnimationType.elastic
         
@@ -231,14 +231,14 @@ class Examples : ScrollableGraphViewDataSource {
         let linePlot = LinePlot(identifier: "darkLine")
         
         linePlot.lineWidth = 1
-        linePlot.lineColor = UIColor.colorFromHex(hexString: "#777777")
+        linePlot.lineColor = UIColor.colorFromHex(hexString: "#777777").cgColor
         linePlot.lineStyle = ScrollableGraphViewLineStyle.smooth
         
         linePlot.shouldFill = true
         linePlot.fillType = ScrollableGraphViewFillType.gradient
         linePlot.fillGradientType = ScrollableGraphViewGradientType.linear
-        linePlot.fillGradientStartColor = UIColor.colorFromHex(hexString: "#555555")
-        linePlot.fillGradientEndColor = UIColor.colorFromHex(hexString: "#444444")
+        linePlot.fillGradientStartColor = UIColor.colorFromHex(hexString: "#555555").cgColor
+        linePlot.fillGradientEndColor = UIColor.colorFromHex(hexString: "#444444").cgColor
         
         linePlot.adaptAnimationType = ScrollableGraphViewAnimationType.elastic
         
@@ -370,9 +370,9 @@ class Examples : ScrollableGraphViewDataSource {
         // Setup the plot
         let linePlot = LinePlot(identifier: "pinkLine")
         
-        linePlot.lineColor = UIColor.clear
+        linePlot.lineColor = UIColor.clear.cgColor
         linePlot.shouldFill = true
-        linePlot.fillColor = UIColor.colorFromHex(hexString: "#FF0080")
+        linePlot.fillColor = UIColor.colorFromHex(hexString: "#FF0080").cgColor
         
         // Setup the reference lines
         let referenceLines = ReferenceLines()
@@ -406,12 +406,12 @@ class Examples : ScrollableGraphViewDataSource {
         let blueLinePlot = LinePlot(identifier: "multiBlue")
         
         blueLinePlot.lineWidth = 5
-        blueLinePlot.lineColor = UIColor.colorFromHex(hexString: "#16aafc")
+        blueLinePlot.lineColor = UIColor.colorFromHex(hexString: "#16aafc").cgColor
         blueLinePlot.lineStyle = ScrollableGraphViewLineStyle.smooth
         
         blueLinePlot.shouldFill = false
         blueLinePlot.fillType = ScrollableGraphViewFillType.solid
-        blueLinePlot.fillColor = UIColor.colorFromHex(hexString: "#16aafc").withAlphaComponent(0.5)
+        blueLinePlot.fillColor = UIColor.colorFromHex(hexString: "#16aafc").withAlphaComponent(0.5).cgColor
         
         blueLinePlot.adaptAnimationType = ScrollableGraphViewAnimationType.elastic
         
@@ -419,12 +419,12 @@ class Examples : ScrollableGraphViewDataSource {
         let orangeLinePlot = LinePlot(identifier: "multiOrange")
         
         orangeLinePlot.lineWidth = 5
-        orangeLinePlot.lineColor = UIColor.colorFromHex(hexString: "#ff7d78")
+        orangeLinePlot.lineColor = UIColor.colorFromHex(hexString: "#ff7d78").cgColor
         orangeLinePlot.lineStyle = ScrollableGraphViewLineStyle.smooth
         
         orangeLinePlot.shouldFill = false
         orangeLinePlot.fillType = ScrollableGraphViewFillType.solid
-        orangeLinePlot.fillColor = UIColor.colorFromHex(hexString: "#ff7d78").withAlphaComponent(0.5)
+        orangeLinePlot.fillColor = UIColor.colorFromHex(hexString: "#ff7d78").withAlphaComponent(0.5).cgColor
         
         orangeLinePlot.adaptAnimationType = ScrollableGraphViewAnimationType.elastic
         

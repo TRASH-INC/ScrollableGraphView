@@ -1,5 +1,7 @@
 
-import UIKit
+import Foundation
+import CoreGraphics
+import QuartzCore
 
 open class LinePlot : Plot {
     
@@ -10,7 +12,7 @@ open class LinePlot : Plot {
     open var lineWidth: CGFloat = 2
     
     /// The color of the graph line. UIColor.
-    open var lineColor: UIColor = UIColor.black
+    open var lineColor: CGColor = CGColor(colorSpace: CGColorSpaceCreateDeviceRGB(), components: [0.0, 0.0, 0.0, 1.0])!
     
     /// Whether the line is straight or curved.
     open var lineStyle_: Int {
@@ -52,13 +54,13 @@ open class LinePlot : Plot {
     open var fillType = ScrollableGraphViewFillType.solid
     
     /// If fillType is set to .Solid then this colour will be used to fill the graph.
-    open var fillColor: UIColor = UIColor.black
+    open var fillColor: CGColor = CGColor(colorSpace: CGColorSpaceCreateDeviceRGB(), components: [0.0, 0.0, 0.0, 1.0])!
     
     /// If fillType is set to .Gradient then this will be the starting colour for the gradient.
-    open var fillGradientStartColor: UIColor = UIColor.white
+    open var fillGradientStartColor: CGColor = CGColor(colorSpace: CGColorSpaceCreateDeviceRGB(), components: [1.0, 1.0, 1.0, 1.0])!
     
     /// If fillType is set to .Gradient, then this will be the ending colour for the gradient.
-    open var fillGradientEndColor: UIColor = UIColor.black
+    open var fillGradientEndColor:  CGColor = CGColor(colorSpace: CGColorSpaceCreateDeviceRGB(), components: [0.0, 0.0, 0.0, 1.0])!
     
     open var fillGradientType_: Int {
         get { return fillGradientType.rawValue }

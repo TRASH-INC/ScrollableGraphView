@@ -1,15 +1,17 @@
 
-import UIKit
+import Foundation
+import CoreGraphics
+import QuartzCore
 
 internal class LineDrawingLayer : ScrollableGraphViewDrawingLayer {
     
-    private var currentLinePath = UIBezierPath()
+    private var currentLinePath = CGMutablePath()
     
     private var lineStyle: ScrollableGraphViewLineStyle
     private var shouldFill: Bool
     private var lineCurviness: CGFloat
     
-    init(frame: CGRect, lineWidth: CGFloat, lineColor: UIColor, lineStyle: ScrollableGraphViewLineStyle, lineJoin: String, lineCap: String, shouldFill: Bool, lineCurviness: CGFloat) {
+    init(frame: CGRect, lineWidth: CGFloat, lineColor: CGColor, lineStyle: ScrollableGraphViewLineStyle, lineJoin: String, lineCap: String, shouldFill: Bool, lineCurviness: CGFloat) {
         
         self.lineStyle = lineStyle
         self.shouldFill = shouldFill
@@ -18,23 +20,24 @@ internal class LineDrawingLayer : ScrollableGraphViewDrawingLayer {
         super.init(viewportWidth: frame.size.width, viewportHeight: frame.size.height)
         
         self.lineWidth = lineWidth
-        self.strokeColor = lineColor.cgColor
+        self.strokeColor = lineColor
         
         self.lineJoin = convertToCAShapeLayerLineJoin(lineJoin)
         self.lineCap = convertToCAShapeLayerLineCap(lineCap)
         
         // Setup
-        self.fillColor = UIColor.clear.cgColor // This is handled by the fill drawing layer.
+        
+        self.fillColor =  CGColor(colorSpace: CGColorSpaceCreateDeviceRGB(), components: [0.0, 0.0, 0.0, 0.0])! // This is handled by the fill drawing layer.
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    internal func createLinePath() -> UIBezierPath {
+    internal func createLinePath() -> CGMutablePath {
         
         guard let owner = owner else {
-            return UIBezierPath()
+            return CGMutablePath()
         }
         
         // Can't really do anything without the delegate.
@@ -42,7 +45,9 @@ internal class LineDrawingLayer : ScrollableGraphViewDrawingLayer {
             return currentLinePath
         }
         
-        currentLinePath.removeAllPoints()
+        
+        // reset - theres no remove with CGMutablePath as of swift 4.2
+        currentLinePath = CGMutablePath()
         
         let pathSegmentAdder = lineStyle == .straight ? addStraightLineSegment : addCurvedLineSegment
         
@@ -102,11 +107,11 @@ internal class LineDrawingLayer : ScrollableGraphViewDrawingLayer {
         return currentLinePath
     }
     
-    private func addStraightLineSegment(startPoint: CGPoint, endPoint: CGPoint, inPath path: UIBezierPath) {
+    private func addStraightLineSegment(startPoint: CGPoint, endPoint: CGPoint, inPath path: CGMutablePath) {
         path.addLine(to: endPoint)
     }
     
-    private func addCurvedLineSegment(startPoint: CGPoint, endPoint: CGPoint, inPath path: UIBezierPath) {
+    private func addCurvedLineSegment(startPoint: CGPoint, endPoint: CGPoint, inPath path: CGMutablePath) {
         // calculate control points
         let difference = endPoint.x - startPoint.x
         
@@ -119,11 +124,11 @@ internal class LineDrawingLayer : ScrollableGraphViewDrawingLayer {
         let controlPointTwo = CGPoint(x: x, y: y)
         
         // add curve from start to end
-        currentLinePath.addCurve(to: endPoint, controlPoint1: controlPointOne, controlPoint2: controlPointTwo)
+        currentLinePath.addCurve(to: endPoint, control1: controlPointOne, control2: controlPointTwo)
     }
     
     override func updatePath() {
-        self.path = createLinePath().cgPath
+        self.path = createLinePath()
     }
 }
 

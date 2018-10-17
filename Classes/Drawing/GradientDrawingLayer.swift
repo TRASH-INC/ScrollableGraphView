@@ -1,10 +1,12 @@
 
-import UIKit
+import Foundation
+import CoreGraphics
+import QuartzCore
 
 internal class GradientDrawingLayer : ScrollableGraphViewDrawingLayer {
     
-    private var startColor: UIColor
-    private var endColor: UIColor
+    private var startColor: CGColor
+    private var endColor: CGColor
     private var gradientType: ScrollableGraphViewGradientType
     
     // Gradient fills are only used with lineplots and we need 
@@ -21,7 +23,7 @@ internal class GradientDrawingLayer : ScrollableGraphViewDrawingLayer {
         return mask
     })()
     
-    init(frame: CGRect, startColor: UIColor, endColor: UIColor, gradientType: ScrollableGraphViewGradientType, lineJoin: String = convertFromCAShapeLayerLineJoin(CAShapeLayerLineJoin.round), lineDrawingLayer: LineDrawingLayer) {
+    init(frame: CGRect, startColor: CGColor, endColor: CGColor, gradientType: ScrollableGraphViewGradientType, lineJoin: String = convertFromCAShapeLayerLineJoin(CAShapeLayerLineJoin.round), lineDrawingLayer: LineDrawingLayer) {
         self.startColor = startColor
         self.endColor = endColor
         self.gradientType = gradientType
@@ -44,12 +46,12 @@ internal class GradientDrawingLayer : ScrollableGraphViewDrawingLayer {
     }
     
     override func updatePath() {
-        gradientMask.path = lineDrawingLayer.createLinePath().cgPath
+        gradientMask.path = lineDrawingLayer.createLinePath()
     }
     
     override func draw(in ctx: CGContext) {
         
-        let colors = [startColor.cgColor, endColor.cgColor]
+        let colors = [startColor, endColor]
         let colorSpace = CGColorSpaceCreateDeviceRGB()
         let locations: [CGFloat] = [0.0, 1.0]
         let gradient = CGGradient(colorsSpace: colorSpace, colors: colors as CFArray, locations: locations)
