@@ -117,6 +117,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B97280D2177DAC200C78FBF /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				E1FAD1D12129496E00FE8B13 /* Protocols */,
+				E1FAD1D72129496E00FE8B13 /* Plots */,
+				E1FAD1C82129496E00FE8B13 /* Drawing */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		1B97280E2177DAD600C78FBF /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				E1FAD1D42129496E00FE8B13 /* Reference */,
+				1B97280F2177DAE100C78FBF /* Views */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		1B97280F2177DAE100C78FBF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E1FAD1C92129496E00FE8B13 /* ReferenceLineDrawingView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		291839951C72E6A400753A45 = {
 			isa = PBXGroup;
 			children = (
@@ -176,10 +203,8 @@
 		E1FAD1C72129496E00FE8B13 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				E1FAD1C82129496E00FE8B13 /* Drawing */,
-				E1FAD1D72129496E00FE8B13 /* Plots */,
-				E1FAD1D12129496E00FE8B13 /* Protocols */,
-				E1FAD1D42129496E00FE8B13 /* Reference */,
+				1B97280E2177DAD600C78FBF /* iOS */,
+				1B97280D2177DAC200C78FBF /* Shared */,
 				E1FAD1D02129496E00FE8B13 /* ScrollableGraphView.swift */,
 			);
 			name = Classes;
@@ -194,7 +219,6 @@
 				E1FAD1CF2129496E00FE8B13 /* FillDrawingLayer.swift */,
 				E1FAD1CB2129496E00FE8B13 /* GradientDrawingLayer.swift */,
 				E1FAD1CE2129496E00FE8B13 /* LineDrawingLayer.swift */,
-				E1FAD1C92129496E00FE8B13 /* ReferenceLineDrawingView.swift */,
 				E1FAD1CD2129496E00FE8B13 /* ScrollableGraphViewDrawingLayer.swift */,
 			);
 			path = Drawing;
@@ -287,6 +311,7 @@
 				TargetAttributes = {
 					2918399D1C72E6A400753A45 = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = SHG3AW6YV7;
 						LastSwiftMigration = 1000;
 					};
 				};
@@ -505,7 +530,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = SHG3AW6YV7;
 				INFOPLIST_FILE = GraphView/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -522,7 +547,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = SHG3AW6YV7;
 				INFOPLIST_FILE = GraphView/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
