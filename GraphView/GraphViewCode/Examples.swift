@@ -117,7 +117,7 @@ class Examples : ScrollableGraphViewDataSource {
         let blueDotPlot = DotPlot(identifier: "multiBlueDot")
         blueDotPlot.dataPointType = ScrollableGraphViewDataPointType.circle
         blueDotPlot.dataPointSize = 5
-        blueDotPlot.dataPointFillColor = UIColor.colorFromHex(hexString: "#16aafc")
+        blueDotPlot.dataPointFillColor = UIColor.colorFromHex(hexString: "#16aafc").cgColor
         
         blueDotPlot.adaptAnimationType = ScrollableGraphViewAnimationType.elastic
         
@@ -131,7 +131,7 @@ class Examples : ScrollableGraphViewDataSource {
         let orangeSquarePlot = DotPlot(identifier: "multiOrangeSquare")
         orangeSquarePlot.dataPointType = ScrollableGraphViewDataPointType.square
         orangeSquarePlot.dataPointSize = 5
-        orangeSquarePlot.dataPointFillColor = UIColor.colorFromHex(hexString: "#ff7d78")
+        orangeSquarePlot.dataPointFillColor = UIColor.colorFromHex(hexString: "#ff7d78").cgColor
         
         orangeSquarePlot.adaptAnimationType = ScrollableGraphViewAnimationType.elastic
         
@@ -244,7 +244,7 @@ class Examples : ScrollableGraphViewDataSource {
         
         let dotPlot = DotPlot(identifier: "darkLineDot") // Add dots as well.
         dotPlot.dataPointSize = 2
-        dotPlot.dataPointFillColor = UIColor.white
+        dotPlot.dataPointFillColor = UIColor.white.cgColor
         
         dotPlot.adaptAnimationType = ScrollableGraphViewAnimationType.elastic
         
@@ -333,7 +333,7 @@ class Examples : ScrollableGraphViewDataSource {
         let plot = DotPlot(identifier: "dot")
         
         plot.dataPointSize = 5
-        plot.dataPointFillColor = UIColor.white
+        plot.dataPointFillColor = UIColor.white.cgColor
         
         // Setup the reference lines
         let referenceLines = ReferenceLines()

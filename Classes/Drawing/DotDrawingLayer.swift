@@ -1,15 +1,17 @@
 
-import UIKit
+import Foundation
+import CoreGraphics
+import QuartzCore
 
 internal class DotDrawingLayer: ScrollableGraphViewDrawingLayer {
     
-    private var dataPointPath = UIBezierPath()
+    private var dataPointPath = CGMutablePath()
     private var dataPointSize: CGFloat = 5
     private var dataPointType: ScrollableGraphViewDataPointType = .circle
     
-    private var customDataPointPath: ((_ centre: CGPoint) -> UIBezierPath)?
+    private var customDataPointPath: ((_ centre: CGPoint) -> CGMutablePath)?
     
-    init(frame: CGRect, fillColor: UIColor, dataPointType: ScrollableGraphViewDataPointType, dataPointSize: CGFloat, customDataPointPath: ((_ centre: CGPoint) -> UIBezierPath)? = nil) {
+    init(frame: CGRect, fillColor: CGColor, dataPointType: ScrollableGraphViewDataPointType, dataPointSize: CGFloat, customDataPointPath: ((_ centre: CGPoint) -> CGMutablePath)? = nil) {
         
         self.dataPointType = dataPointType
         self.dataPointSize = dataPointSize
@@ -17,16 +19,16 @@ internal class DotDrawingLayer: ScrollableGraphViewDrawingLayer {
         
         super.init(viewportWidth: frame.size.width, viewportHeight: frame.size.height)
         
-        self.fillColor = fillColor.cgColor
+        self.fillColor = fillColor
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func createDataPointPath() -> UIBezierPath {
+    private func createDataPointPath() -> CGMutablePath {
         
-        dataPointPath.removeAllPoints()
+        dataPointPath = CGMutablePath()
         
         // We can only move forward if we can get the data we need from the delegate.
         guard let
@@ -46,19 +48,21 @@ internal class DotDrawingLayer: ScrollableGraphViewDrawingLayer {
             }
             
             let pointPath = pointPathCreator(location)
-            dataPointPath.append(pointPath)
+            dataPointPath.addPath(pointPath)
         }
         
         return dataPointPath
     }
     
-    private func createCircleDataPoint(centre: CGPoint) -> UIBezierPath {
-        return UIBezierPath(arcCenter: centre, radius: dataPointSize, startAngle: 0, endAngle: CGFloat(2.0 * Double.pi), clockwise: true)
+    private func createCircleDataPoint(centre: CGPoint) -> CGMutablePath {
+        let path = CGMutablePath()
+        path.addArc(center: centre, radius: dataPointSize, startAngle: 0, endAngle: CGFloat(2.0 * Double.pi), clockwise: true)
+        return path
     }
     
-    private func createSquareDataPoint(centre: CGPoint) -> UIBezierPath {
+    private func createSquareDataPoint(centre: CGPoint) -> CGMutablePath {
         
-        let squarePath = UIBezierPath()
+        let squarePath = CGMutablePath()
         
         squarePath.move(to: centre)
         
@@ -76,7 +80,7 @@ internal class DotDrawingLayer: ScrollableGraphViewDrawingLayer {
         return squarePath
     }
     
-    private func getPointPathCreator() -> (_ centre: CGPoint) -> UIBezierPath {
+    private func getPointPathCreator() -> (_ centre: CGPoint) -> CGMutablePath {
         switch(self.dataPointType) {
         case .circle:
             return createCircleDataPoint
@@ -96,6 +100,6 @@ internal class DotDrawingLayer: ScrollableGraphViewDrawingLayer {
     }
     
     override func updatePath() {
-        self.path = createDataPointPath().cgPath
+        self.path = createDataPointPath()
     }
 }

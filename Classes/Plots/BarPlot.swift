@@ -1,5 +1,6 @@
 
-import UIKit
+import Foundation
+import CoreGraphics
 
 open class BarPlot : Plot {
     

@@ -1,4 +1,6 @@
-import UIKit
+import Foundation
+import CoreGraphics
+import QuartzCore
 
 internal class GraphPointAnimation : Equatable {
     
