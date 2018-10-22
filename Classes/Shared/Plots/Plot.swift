@@ -33,14 +33,23 @@ open class Plot {
     // #######################
     
     private var currentAnimations = [GraphPointAnimation]()
+#if TARGET_OS_IPHONE
     private var displayLink: CADisplayLink!
+#else
+    private var displayLink: CVDisplayLink!
+#endif
+    
     private var previousTimestamp: CFTimeInterval = 0
     private var currentTimestamp: CFTimeInterval = 0
     
     private var graphPoints = [GraphPoint]()
     
     deinit {
+#if TARGET_OS_IPHONE
         displayLink?.invalidate()
+#else
+        CVDisplayLinkStop(displayLink);
+#endif
     }
     
     // MARK: Different plot types should implement:
@@ -99,7 +108,7 @@ open class Plot {
     private func enqueue(animation: GraphPointAnimation) {
         if (currentAnimations.count == 0) {
             // Need to kick off the loop.
-            displayLink.isPaused = false
+            startDisplayLink()
         }
         currentAnimations.append(animation)
     }
@@ -111,7 +120,7 @@ open class Plot {
         
         if(currentAnimations.count == 0) {
             // Stop animation loop.
-            displayLink.isPaused = true
+            pauseDisplayLink()
         }
     }
     
@@ -122,7 +131,7 @@ open class Plot {
         }
         
         currentAnimations.removeAll()
-        displayLink.isPaused = true
+        pauseDisplayLink();
     }
     
     private func timeSinceLastFrame() -> Double {
@@ -210,15 +219,27 @@ open class Plot {
     }
     
     internal func setup() {
+        #if TARGET_OS_IOS
         displayLink = CADisplayLink(target: self, selector: #selector(animationUpdate))
         displayLink.add(to: RunLoop.main, forMode: RunLoop.Mode.common)
         displayLink.isPaused = true
+        
+        #else
+        
+        CVDisplayLinkCreateWithActiveCGDisplays(UnsafeMutablePointer<displayLink>);
+        CVDisplayLinkSetOutputCallback(<#T##displayLink: CVDisplayLink##CVDisplayLink#>, <#T##callback: CVDisplayLinkOutputCallback?##CVDisplayLinkOutputCallback?##(CVDisplayLink, UnsafePointer<CVTimeStamp>, UnsafePointer<CVTimeStamp>, CVOptionFlags, UnsafeMutablePointer<CVOptionFlags>, UnsafeMutableRawPointer?) -> CVReturn#>, <#T##userInfo: UnsafeMutableRawPointer?##UnsafeMutableRawPointer?#>)
+        #endif
+        
     }
     
     internal func reset() {
         currentAnimations.removeAll()
         graphPoints.removeAll()
+        #if TARGET_OS_IPHONE
         displayLink?.invalidate()
+        #else
+        CVDisplayLinkStop(displayLink);
+        #endif
         previousTimestamp = 0
         currentTimestamp = 0
     }
@@ -226,11 +247,46 @@ open class Plot {
     internal func invalidate() {
         currentAnimations.removeAll()
         graphPoints.removeAll()
+        #if TARGET_OS_IPHONE
         displayLink?.invalidate()
+        #else
+        CVDisplayLinkStop(displayLink);
+        #endif
     }
     
     internal func graphPoint(forIndex index: Int) -> GraphPoint {
         return graphPoints[index]
+    }
+    
+    internal func pauseDisplayLink()
+    {
+        #if TARGET_OS_IPHONE
+        displayLink.isPaused = true
+        #else
+        CVDisplayLinkStop(displayLink);
+        #endif
+    }
+    
+    internal func startDisplayLink()
+    {
+        #if TARGET_OS_IPHONE
+        displayLink.isPaused = false
+        #else
+        CVDisplayLinkStart(displayLink);
+        #endif
+    }
+    
+    internal func getDisplayLinkTime() -> Double
+    {
+        #if TARGET_OS_IPHONE
+        return displayLink.timestamp
+        #else
+        
+        var:UnsafeMutablePointer<CVTimeStamp> timestamp
+        
+        CVDisplayLinkGetCurrentTime(displayLink, timestamp)
+
+        #endif
     }
 }
 

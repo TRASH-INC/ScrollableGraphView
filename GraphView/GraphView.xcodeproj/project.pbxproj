@@ -7,6 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B9728172177DF4D00C78FBF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9728162177DF4D00C78FBF /* AppDelegate.swift */; };
+		1B9728192177DF4E00C78FBF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B9728182177DF4E00C78FBF /* Assets.xcassets */; };
+		1B97281C2177DF4E00C78FBF /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B97281A2177DF4E00C78FBF /* MainMenu.xib */; };
+		1B9728222177DF7400C78FBF /* BarDrawingLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FAD1CA2129496E00FE8B13 /* BarDrawingLayer.swift */; };
+		1B9728232177DF7400C78FBF /* DotDrawingLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FAD1CC2129496E00FE8B13 /* DotDrawingLayer.swift */; };
+		1B9728242177DF7400C78FBF /* FillDrawingLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FAD1CF2129496E00FE8B13 /* FillDrawingLayer.swift */; };
+		1B9728252177DF7400C78FBF /* GradientDrawingLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FAD1CB2129496E00FE8B13 /* GradientDrawingLayer.swift */; };
+		1B9728262177DF7400C78FBF /* LineDrawingLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FAD1CE2129496E00FE8B13 /* LineDrawingLayer.swift */; };
+		1B9728272177DF7400C78FBF /* ScrollableGraphViewDrawingLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FAD1CD2129496E00FE8B13 /* ScrollableGraphViewDrawingLayer.swift */; };
+		1B9728282177DF7900C78FBF /* GraphPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FAD1DB2129496E00FE8B13 /* GraphPoint.swift */; };
+		1B9728292177DF7900C78FBF /* GraphPointAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FAD1DA2129496E00FE8B13 /* GraphPointAnimation.swift */; };
+		1B97282A2177DF7900C78FBF /* BarPlot.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FAD1D82129496E00FE8B13 /* BarPlot.swift */; };
+		1B97282B2177DF7900C78FBF /* DotPlot.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FAD1DE2129496E00FE8B13 /* DotPlot.swift */; };
+		1B97282C2177DF7900C78FBF /* LinePlot.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FAD1DD2129496E00FE8B13 /* LinePlot.swift */; };
+		1B97282D2177DF7900C78FBF /* Plot.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FAD1DC2129496E00FE8B13 /* Plot.swift */; };
+		1B97282E2177DF7C00C78FBF /* ScrollableGraphViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FAD1D32129496E00FE8B13 /* ScrollableGraphViewDataSource.swift */; };
+		1B97282F2177DF7C00C78FBF /* ScrollableGraphViewDrawingDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FAD1D22129496E00FE8B13 /* ScrollableGraphViewDrawingDelegate.swift */; };
+		1B9728322177E75500C78FBF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B9728312177E75500C78FBF /* CoreGraphics.framework */; };
+		1B9728342177E75B00C78FBF /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B9728332177E75B00C78FBF /* QuartzCore.framework */; };
+		1B9728362177E76200C78FBF /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B9728352177E76200C78FBF /* CoreFoundation.framework */; };
+		1B9728382177E76800C78FBF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B9728372177E76800C78FBF /* Foundation.framework */; };
 		E10847802129DAAA009A9586 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E108477F2129DAAA009A9586 /* LaunchScreen.storyboard */; };
 		E10847822129DAB5009A9586 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E10847812129DAB5009A9586 /* Main.storyboard */; };
 		E10847852129DC60009A9586 /* ScrollableGraphViewDrawingDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FAD1D22129496E00FE8B13 /* ScrollableGraphViewDrawingDelegate.swift */; };
@@ -62,6 +83,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1B9728142177DF4D00C78FBF /* macGraphView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = macGraphView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B9728162177DF4D00C78FBF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1B9728182177DF4E00C78FBF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1B97281B2177DF4E00C78FBF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		1B97281D2177DF4E00C78FBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1B97281E2177DF4E00C78FBF /* macGraphView.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macGraphView.entitlements; sourceTree = "<group>"; };
+		1B9728312177E75500C78FBF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		1B9728332177E75B00C78FBF /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		1B9728352177E76200C78FBF /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/System/Library/Frameworks/CoreFoundation.framework; sourceTree = DEVELOPER_DIR; };
+		1B9728372177E76800C78FBF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		2918399E1C72E6A400753A45 /* GraphViewCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GraphViewCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E108477F2129DAAA009A9586 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E10847812129DAB5009A9586 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -100,6 +131,17 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		1B9728112177DF4D00C78FBF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B9728382177E76800C78FBF /* Foundation.framework in Frameworks */,
+				1B9728362177E76200C78FBF /* CoreFoundation.framework in Frameworks */,
+				1B9728342177E75B00C78FBF /* QuartzCore.framework in Frameworks */,
+				1B9728322177E75500C78FBF /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2918399B1C72E6A400753A45 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -130,6 +172,7 @@
 		1B97280E2177DAD600C78FBF /* iOS */ = {
 			isa = PBXGroup;
 			children = (
+				E1FAD1D02129496E00FE8B13 /* ScrollableGraphView.swift */,
 				E1FAD1D42129496E00FE8B13 /* Reference */,
 				1B97280F2177DAE100C78FBF /* Views */,
 			);
@@ -144,6 +187,29 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		1B9728152177DF4D00C78FBF /* macGraphView */ = {
+			isa = PBXGroup;
+			children = (
+				1B9728162177DF4D00C78FBF /* AppDelegate.swift */,
+				1B9728182177DF4E00C78FBF /* Assets.xcassets */,
+				1B97281A2177DF4E00C78FBF /* MainMenu.xib */,
+				1B97281D2177DF4E00C78FBF /* Info.plist */,
+				1B97281E2177DF4E00C78FBF /* macGraphView.entitlements */,
+			);
+			path = macGraphView;
+			sourceTree = "<group>";
+		};
+		1B9728302177E75400C78FBF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1B9728372177E76800C78FBF /* Foundation.framework */,
+				1B9728352177E76200C78FBF /* CoreFoundation.framework */,
+				1B9728332177E75B00C78FBF /* QuartzCore.framework */,
+				1B9728312177E75500C78FBF /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		291839951C72E6A400753A45 = {
 			isa = PBXGroup;
 			children = (
@@ -151,7 +217,9 @@
 				E1A077E72129D948009C2537 /* GraphView */,
 				E1FAD1B2212948E900FE8B13 /* GraphViewCode */,
 				E11233A02129DD75002C1CC7 /* GraphViewIB */,
+				1B9728152177DF4D00C78FBF /* macGraphView */,
 				2918399F1C72E6A400753A45 /* Products */,
+				1B9728302177E75400C78FBF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -160,6 +228,7 @@
 			children = (
 				2918399E1C72E6A400753A45 /* GraphViewCode.app */,
 				E10847A42129DC60009A9586 /* GraphViewIB.app */,
+				1B9728142177DF4D00C78FBF /* macGraphView.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -205,7 +274,6 @@
 			children = (
 				1B97280E2177DAD600C78FBF /* iOS */,
 				1B97280D2177DAC200C78FBF /* Shared */,
-				E1FAD1D02129496E00FE8B13 /* ScrollableGraphView.swift */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -266,6 +334,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		1B9728132177DF4D00C78FBF /* macGraphView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1B97281F2177DF4E00C78FBF /* Build configuration list for PBXNativeTarget "macGraphView" */;
+			buildPhases = (
+				1B9728102177DF4D00C78FBF /* Sources */,
+				1B9728112177DF4D00C78FBF /* Frameworks */,
+				1B9728122177DF4D00C78FBF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = macGraphView;
+			productName = macGraphView;
+			productReference = 1B9728142177DF4D00C78FBF /* macGraphView.app */;
+			productType = "com.apple.product-type.application";
+		};
 		2918399D1C72E6A400753A45 /* GraphViewCode */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 291839B01C72E6A400753A45 /* Build configuration list for PBXNativeTarget "GraphViewCode" */;
@@ -306,9 +391,14 @@
 		291839961C72E6A400753A45 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0720;
+				LastSwiftUpdateCheck = 1000;
 				LastUpgradeCheck = 0940;
 				TargetAttributes = {
+					1B9728132177DF4D00C78FBF = {
+						CreatedOnToolsVersion = 10.0;
+						DevelopmentTeam = SHG3AW6YV7;
+						ProvisioningStyle = Automatic;
+					};
 					2918399D1C72E6A400753A45 = {
 						CreatedOnToolsVersion = 7.2.1;
 						DevelopmentTeam = SHG3AW6YV7;
@@ -331,11 +421,21 @@
 			targets = (
 				2918399D1C72E6A400753A45 /* GraphViewCode */,
 				E10847832129DC60009A9586 /* GraphViewIB */,
+				1B9728132177DF4D00C78FBF /* macGraphView */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		1B9728122177DF4D00C78FBF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B9728192177DF4E00C78FBF /* Assets.xcassets in Resources */,
+				1B97281C2177DF4E00C78FBF /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2918399C1C72E6A400753A45 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -361,6 +461,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		1B9728102177DF4D00C78FBF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B97282D2177DF7900C78FBF /* Plot.swift in Sources */,
+				1B97282E2177DF7C00C78FBF /* ScrollableGraphViewDataSource.swift in Sources */,
+				1B97282C2177DF7900C78FBF /* LinePlot.swift in Sources */,
+				1B97282F2177DF7C00C78FBF /* ScrollableGraphViewDrawingDelegate.swift in Sources */,
+				1B9728232177DF7400C78FBF /* DotDrawingLayer.swift in Sources */,
+				1B9728252177DF7400C78FBF /* GradientDrawingLayer.swift in Sources */,
+				1B97282A2177DF7900C78FBF /* BarPlot.swift in Sources */,
+				1B9728262177DF7400C78FBF /* LineDrawingLayer.swift in Sources */,
+				1B9728242177DF7400C78FBF /* FillDrawingLayer.swift in Sources */,
+				1B9728222177DF7400C78FBF /* BarDrawingLayer.swift in Sources */,
+				1B9728272177DF7400C78FBF /* ScrollableGraphViewDrawingLayer.swift in Sources */,
+				1B9728172177DF4D00C78FBF /* AppDelegate.swift in Sources */,
+				1B9728292177DF7900C78FBF /* GraphPointAnimation.swift in Sources */,
+				1B97282B2177DF7900C78FBF /* DotPlot.swift in Sources */,
+				1B9728282177DF7900C78FBF /* GraphPoint.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2918399A1C72E6A400753A45 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -421,7 +543,74 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXVariantGroup section */
+		1B97281A2177DF4E00C78FBF /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1B97281B2177DF4E00C78FBF /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
+		1B9728202177DF4E00C78FBF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = macGraphView/macGraphView.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = SHG3AW6YV7;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = macGraphView/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ios.GraphViewCode.macGraphView;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 4.2;
+			};
+			name = Debug;
+		};
+		1B9728212177DF4E00C78FBF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = macGraphView/macGraphView.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = SHG3AW6YV7;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = macGraphView/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ios.GraphViewCode.macGraphView;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 4.2;
+			};
+			name = Release;
+		};
 		291839AE1C72E6A400753A45 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -595,6 +784,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1B97281F2177DF4E00C78FBF /* Build configuration list for PBXNativeTarget "macGraphView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B9728202177DF4E00C78FBF /* Debug */,
+				1B9728212177DF4E00C78FBF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		291839991C72E6A400753A45 /* Build configuration list for PBXProject "GraphView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
